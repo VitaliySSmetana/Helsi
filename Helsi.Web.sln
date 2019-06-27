@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helsi.Web", "Helsi.Web\Helsi.Web.csproj", "{BD142A0D-14EB-4E97-8B83-8A4C31166247}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helsi.DataAccess", "Helsi.DataAccess\Helsi.DataAccess.csproj", "{A2127650-DE5E-4DB6-B9AD-7D3094C1AB0E}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{39D504F5-74C9-4D21-B330-C1CF01B7AEFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD142A0D-14EB-4E97-8B83-8A4C31166247}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD142A0D-14EB-4E97-8B83-8A4C31166247}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD142A0D-14EB-4E97-8B83-8A4C31166247}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD142A0D-14EB-4E97-8B83-8A4C31166247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2127650-DE5E-4DB6-B9AD-7D3094C1AB0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2127650-DE5E-4DB6-B9AD-7D3094C1AB0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2127650-DE5E-4DB6-B9AD-7D3094C1AB0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2127650-DE5E-4DB6-B9AD-7D3094C1AB0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39D504F5-74C9-4D21-B330-C1CF01B7AEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39D504F5-74C9-4D21-B330-C1CF01B7AEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39D504F5-74C9-4D21-B330-C1CF01B7AEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39D504F5-74C9-4D21-B330-C1CF01B7AEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4A66413-8ABC-4407-B84F-72931419CCEA}
+	EndGlobalSection
+EndGlobal

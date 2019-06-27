@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  helsi.web:
+    image: ${DOCKER_REGISTRY-}helsiweb
+    build:
+      context: .
+      dockerfile: Helsi.Web\Dockerfile
