@@ -11,6 +11,8 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helsi.Dto", "Helsi.Dto\Helsi.Dto.csproj", "{C7B3D15B-31B3-4AEC-B6DB-652D6802C7C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helsi.DomainLogic", "Helsi.DomainLogic\Helsi.DomainLogic.csproj", "{6E7C34D9-55A2-4443-B650-4BB133656263}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C7B3D15B-31B3-4AEC-B6DB-652D6802C7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7B3D15B-31B3-4AEC-B6DB-652D6802C7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7B3D15B-31B3-4AEC-B6DB-652D6802C7C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E7C34D9-55A2-4443-B650-4BB133656263}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E7C34D9-55A2-4443-B650-4BB133656263}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E7C34D9-55A2-4443-B650-4BB133656263}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E7C34D9-55A2-4443-B650-4BB133656263}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
