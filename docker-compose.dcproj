@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Windows</DockerTargetOS>
-    <ProjectGuid>39d504f5-74c9-4d21-b330-c1cf01b7aefe</ProjectGuid>
+    <ProjectGuid>39f9cbc9-46f2-4bc2-876c-578fea9f86e7</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://{ServiceIPAddress}{ServicePort}</DockerServiceUrl>
     <DockerServiceName>helsi.web</DockerServiceName>

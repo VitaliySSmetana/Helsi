@@ -10,6 +10,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:2.2-nanoserver-1809 AS build
 WORKDIR /src
 COPY ["Helsi.Web/Helsi.Web.csproj", "Helsi.Web/"]
 COPY ["Helsi.DataAccess/Helsi.DataAccess.csproj", "Helsi.DataAccess/"]
+COPY ["Helsi.Core/Helsi.Core.csproj", "Helsi.Core/"]
 RUN dotnet restore "Helsi.Web/Helsi.Web.csproj"
 COPY . .
 WORKDIR "/src/Helsi.Web"
