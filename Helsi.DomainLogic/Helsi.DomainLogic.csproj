@@ -5,15 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Mapping\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Helsi.Core\Helsi.Core.csproj" />
+    <ProjectReference Include="..\Helsi.DataAccess\Helsi.DataAccess.csproj" />
+    <ProjectReference Include="..\Helsi.Dto\Helsi.Dto.csproj" />
   </ItemGroup>
 
 </Project>

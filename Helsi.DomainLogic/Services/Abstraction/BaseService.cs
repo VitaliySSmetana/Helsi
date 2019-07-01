@@ -1,4 +1,5 @@
 ﻿using Helsi.Core.Entities;
+using Helsi.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -7,7 +8,12 @@ namespace Helsi.DomainLogic.Services
 {
     public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : class, IEntity<int>
     {
-        protected readonly DbContext _context;
+        protected readonly HelsiContext _context;
+
+        public BaseService(HelsiContext context)
+        {
+            _context = context;
+        }
 
         public void Commit(bool saveChanges = true)
         {
