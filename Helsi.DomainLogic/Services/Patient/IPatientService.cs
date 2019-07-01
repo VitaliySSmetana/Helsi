@@ -10,7 +10,8 @@ namespace Helsi.DomainLogic.Services
     {
         IEnumerable<PatientDto> GetPatients();
         PatientDto GetPatient(int id);
-        void CreatePatient(PatientDto patientDto);
+        int CreatePatient(PatientDto patientDto);
+        void UpdatePatient(PatientDto patientDto);
         void Deactivate(int id);
     }
 }

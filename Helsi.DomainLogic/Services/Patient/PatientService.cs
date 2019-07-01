@@ -24,11 +24,22 @@ namespace Helsi.DomainLogic.Services
             _additionalContactService = additionalContactService;
         }
 
-        public void CreatePatient(PatientDto patientDto)
+        public int CreatePatient(PatientDto patientDto)
         {
             var patient = _mapper.Map<Patient>(patientDto);
 
-            Create(patient, true);
+            Create(patient);
+
+            return patient.Id;
+        }
+
+        public void UpdatePatient(PatientDto patientDto)
+        {
+            var patient = Get(patientDto.Id);
+
+            _mapper.Map(patientDto, patient);
+
+            Commit();
         }
 
         public void Deactivate(int id)
