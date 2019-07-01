@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Helsi.DomainLogic.Services;
+using Helsi.Dto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -42,14 +43,30 @@ namespace Helsi.Web.Controllers
 
         // POST: api/Patient
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] PatientDto model)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var patientId = _patientService.CreatePatient(model);
+
+            return Ok(patientId);
         }
 
         // PUT: api/Patient/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put([FromBody] PatientDto model)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _patientService.UpdatePatient(model);
+
+            return Ok();
         }
 
         // DELETE: api/ApiWithActions/5
