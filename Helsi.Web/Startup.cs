@@ -12,6 +12,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using AutoMapper;
+using Helsi.DomainLogic.Mapping;
+using Helsi.DomainLogic.Services;
 
 namespace Helsi.Web
 {
@@ -34,7 +37,13 @@ namespace Helsi.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddAutoMapper(typeof(MappingProfile));
+
             services.AddDbContext<HelsiContext>(opt => opt.UseInMemoryDatabase("HelsiDB"));
+
+            services.AddTransient<IPatientService, PatientService>();
+            services.AddTransient<IAdditionalContactService, AdditionalContactService>();
+            
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -83,9 +92,9 @@ namespace Helsi.Web
                 );
 
                 context.Patients.AddRange(
-                    new Patient { Id = 1, GenderId = 1, FirstName = "John", LastName = "Doe", Patronymic = "Nillson", PhoneNumber = "+380551012233", BirthDate = new DateTime(2000, 12, 23) },
-                    new Patient { Id = 2, GenderId = 3, FirstName = "Abigail", LastName = "Black", Patronymic = "Jackson", PhoneNumber = "+380663013255", BirthDate = new DateTime(2005, 1, 16) },
-                    new Patient { Id = 3, GenderId = 2, FirstName = "Ann", LastName = "Smith", Patronymic = "Willson", PhoneNumber = "+380681238899", BirthDate = new DateTime(2003, 2, 1) }
+                    new Patient { Id = 1, GenderId = 1, FirstName = "John", LastName = "Doe", Patronymic = "Nillson", PhoneNumber = "+380551012233", BirthDate = new DateTime(2000, 12, 23), IsActive = true },
+                    new Patient { Id = 2, GenderId = 3, FirstName = "Abigail", LastName = "Black", Patronymic = "Jackson", PhoneNumber = "+380663013255", BirthDate = new DateTime(2005, 1, 16), IsActive = true },
+                    new Patient { Id = 3, GenderId = 2, FirstName = "Ann", LastName = "Smith", Patronymic = "Willson", PhoneNumber = "+380681238899", BirthDate = new DateTime(2003, 2, 1), IsActive = true }
                 );
 
                 context.AdditionalContacts.AddRange(

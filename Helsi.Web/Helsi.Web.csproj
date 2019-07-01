@@ -10,14 +10,19 @@
 
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.7.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
 
   <ItemGroup>
     <ProjectReference Include="..\Helsi.DataAccess\Helsi.DataAccess.csproj" />
+    <ProjectReference Include="..\Helsi.DomainLogic\Helsi.DomainLogic.csproj" />
+    <ProjectReference Include="..\Helsi.Dto\Helsi.Dto.csproj" />
   </ItemGroup>
 
 </Project>
