@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Helsi.DataAccess.Models
 {
-    public class Patient
+    public partial class Patient
     {
         public Patient()
         {

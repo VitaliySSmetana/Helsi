@@ -1,6 +1,6 @@
 ﻿namespace Helsi.DataAccess.Models
 {
-    public class AdditionalContact
+    public partial class AdditionalContact
     {
         public int Id { get; set; }
         public int ContactTypeId { get; set; }
