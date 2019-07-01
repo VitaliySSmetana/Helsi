@@ -12,6 +12,5 @@ namespace Helsi.Dto
         public string PhoneNumber { get; set; }
 
         public ContactTypeDto ContactType { get; set; }
-        public PatientDto Patient { get; set; }
     }
 }

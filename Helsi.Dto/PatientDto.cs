@@ -12,8 +12,8 @@ namespace Helsi.Dto
         public DateTime BirthDate { get; set; }
         public int GenderId { get; set; }
         public string PhoneNumber { get; set; }
-
+        public bool IsActive { get; set; }
         public GenderDto Gender { get; set; }
-        public ICollection<AdditionalContactDto> AdditionalContactDtos { get; set; }
+        public ICollection<AdditionalContactDto> AdditionalContacts { get; set; }
     }
 }
