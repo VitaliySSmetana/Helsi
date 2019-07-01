@@ -1,12 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Helsi.Core.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Helsi.DomainLogic.Services
 {
-    public class BaseService<T> : IBaseService<T> where T : class
+    public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : class, IEntity<int>
     {
         protected readonly DbContext _context;
 
@@ -16,22 +15,22 @@ namespace Helsi.DomainLogic.Services
                 _context.SaveChanges();
         }
 
-        public T Create(T newItem, bool shouldBeCommited = true)
+        public TEntity Create(TEntity newItem, bool shouldBeCommited = true)
         {
-            _context.Set<T>().Add(newItem);
+            _context.Set<TEntity>().Add(newItem);
             Commit(shouldBeCommited);
 
             return newItem;
         }
 
-        public T Get(int id)
+        public TEntity Get(int id)
         {
-            throw new NotImplementedException();
+            return _context.Set<TEntity>().FirstOrDefault(entity => entity.Id == id);
         }
 
-        public IQueryable<T> GetAll()
+        public IQueryable<TEntity> GetAll()
         {
-            return _context.Set<T>();
+            return _context.Set<TEntity>();
         }
 
         public void Remove(int id, bool shouldBeCommited = true)
