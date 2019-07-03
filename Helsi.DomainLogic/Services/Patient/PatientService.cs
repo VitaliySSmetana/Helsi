@@ -59,7 +59,8 @@ namespace Helsi.DomainLogic.Services
             if (patient != null)
             {
                 patient.IsActive = false;
-
+                _context.Entry(patient).State = EntityState.Modified;
+    
                 Commit();
             }
         }
