@@ -27,6 +27,8 @@ namespace Helsi.DomainLogic.Services
         public int CreatePatient(PatientDto patientDto)
         {
             var patient = _mapper.Map<Patient>(patientDto);
+            patient.Id = GeneratePatientId();
+            patient.IsActive = true;
 
             Create(patient);
 
@@ -35,11 +37,19 @@ namespace Helsi.DomainLogic.Services
 
         public void UpdatePatient(PatientDto patientDto)
         {
-            var patient = Get(patientDto.Id);
+            var patient = GetAll()
+                .Include(x => x.Gender)
+                .Include(x => x.AdditionalContacts)
+                .ThenInclude(x => x.ContactType)
+                .FirstOrDefault(x => x.Id == patientDto.Id);
 
-            _mapper.Map(patientDto, patient);
+            if (patient != null)
+            {
+                _mapper.Map(patientDto, patient);
+                _context.Entry(patient).State = EntityState.Modified;
 
-            Commit();
+                Commit();
+            }
         }
 
         public void Deactivate(int id)
@@ -49,9 +59,9 @@ namespace Helsi.DomainLogic.Services
             if (patient != null)
             {
                 patient.IsActive = false;
-            }
 
-            Commit();
+                Commit();
+            }
         }
 
         public PatientDto GetPatient(int id)
@@ -80,6 +90,14 @@ namespace Helsi.DomainLogic.Services
                 .ToList();
 
             return patients;
+        }
+
+        private int GeneratePatientId()
+        {
+            var id = GetAll()
+                .Max(x => x.Id);
+
+            return ++id;
         }
     }
 }
