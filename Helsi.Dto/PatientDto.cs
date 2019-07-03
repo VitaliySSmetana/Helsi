@@ -12,16 +12,16 @@ namespace Helsi.Dto
 
         [Required(ErrorMessage = "Last name is required")]
         [StringLength(128, ErrorMessage = "Max length for {0} is 128 characters")]
-        [RegularExpression("@^([А-ЯЁа-яё -])$")]
+        [RegularExpression(@"^([А-ЯЁа-яё -]+)$")]
         public string LastName { get; set; }
 
         [Required]
         [StringLength(128, ErrorMessage = "Max length for {0} is 128 characters")]
-        [RegularExpression("@^([А-ЯЁа-яё -])$")]
+        [RegularExpression(@"^([А-ЯЁа-яё -]+)$")]
         public string FirstName { get; set; }
 
         [StringLength(128, ErrorMessage = "Max length for {0} is 128 characters")]
-        [RegularExpression("@^([А-ЯЁа-яё -])$")]
+        [RegularExpression(@"^([А-ЯЁа-яё -]+)$")]
         public string Patronymic { get; set; }
 
         [Required]
