@@ -39,11 +39,17 @@ namespace Helsi.Web
 
             services.AddAutoMapper(typeof(MappingProfile));
 
-            services.AddDbContext<HelsiContext>(opt => opt.UseInMemoryDatabase("HelsiDB"));
+            services.AddDbContext<HelsiContext>(opt =>
+            {
+                opt.UseInMemoryDatabase("HelsiDB")
+                    .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+
+                opt.EnableSensitiveDataLogging();
+            });
 
             services.AddTransient<IPatientService, PatientService>();
             services.AddTransient<IAdditionalContactService, AdditionalContactService>();
-            
+
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
